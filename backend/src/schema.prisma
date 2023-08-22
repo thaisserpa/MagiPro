@@ -1,0 +1,48 @@
+type User {
+  mat: ID! @id
+  nome: String!
+  email: String!
+  departamento: String!
+  Senha: String!
+}
+
+type Admin{
+
+}
+
+type Professor{
+
+}
+
+type Aluno{
+
+}
+
+type Projeto{
+    projetoID: ID! @id
+    professor: Professor!
+    aluno: Aluno!
+    Objetivos: String!
+    Cronograma: Date!
+    AlunosQtdMax: Integer!
+    AlunosQtd: Integer!
+    Recursos: String!
+    AreasInteresse: String! 
+}
+
+type Candidatura{
+    candidaturaID: ID! @id
+    aluno: Aluno!
+    projeto: Projeto!
+    resumo: String!
+    Status: String!
+    mensagemProfessor: String!
+}
+
+type Atividades{
+    atividadesID: ID! @id
+    projetoID: Projeto!
+    dataLimite: Date!
+    statusAtividade: String!
+    descricao: String!
+}
