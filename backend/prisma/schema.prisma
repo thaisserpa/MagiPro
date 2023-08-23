@@ -9,3 +9,48 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+model User {
+  mat   String @id @default(uuid())
+  name  String
+  email String
+  senha String
+  Access Access? @relation(fields: [acessId], references: [id])
+  acessId String?
+}
+
+
+model Project {
+  projectID     String   @id @default(uuid())
+  professor     User @relation(fields: [userMat], references: [mat])
+  students      User @relation(fields: [userMat], references: [mat])
+  goals         String
+  timeline      DateTime
+  studentsQMax  Int
+  studentsQ     Int
+  resources     String
+  interestAreas String
+}
+
+model Candidacy {
+  candidacyID      String @id @default(uuid())
+  student          User
+  project          Project
+  summary          String
+  Status           String
+  professorMessage String
+}
+
+model Activity {
+  activityID     String @id @default(uuid())
+  projectID      Project
+  deadline       DateTime
+  activityStatus String
+  description    String
+}
+
+model Access {
+  id   String @id @default(uuid())
+  name String
+  user User[]
+}
