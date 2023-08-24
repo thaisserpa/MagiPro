@@ -1,9 +1,9 @@
 import express from 'express'
 
-const app = express()
+import {createUser} from ".controller/UserController";
 
-app.get("/", (req, res) => {
-    return res.json({message: "Hello world"})
-})
+const app = express()
+app.use(express.json())
+app.use(router);
 
 app.listen(3333, () => console.log("Server started"))

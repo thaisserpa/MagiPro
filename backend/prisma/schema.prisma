@@ -14,7 +14,7 @@ model User {
   mat   String @id @default(uuid())
   name  String
   email String
-  senha String
+  password String
   Access Access? @relation(fields: [acessId], references: [id])
   acessId String?
 }
