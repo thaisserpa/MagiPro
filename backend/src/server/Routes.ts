@@ -1,11 +1,17 @@
-import Express from "express";
+import { Router,Request,Response } from "express";
+import { registerUser, loginUser } from "../controllers/authController";
+import { getProjects } from "../controllers/projectsController";
+import { isUserLoggedIn } from "../middlewares/authJWT";
 
-const routes = Express();
+const router = Router();
 
-routes.get('/', (req,res)=>{
+router.post("/register", registerUser);
+router.post("/login", loginUser)
 
-    return res.send('Opa')
-})
+//rotas necessarias ter autenticação
+router.use(isUserLoggedIn)
 
+router.get("/perfil")
+router.get("/projects", getProjects)
 
-export {routes};
+export { router };
