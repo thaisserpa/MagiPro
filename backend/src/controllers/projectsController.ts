@@ -16,12 +16,13 @@ const createProjects = async (req:ExtendedRequest, res:Response) =>{
     IsTeacher(req.user)
 
     const {title, 
-        description, 
-        objectives, 
-        timeline, 
-        studentCount, 
-        resources, 
-        interestArea}  = req.body
+            description, 
+            objectives, 
+            timeline, 
+            studentCount, 
+            resources, 
+            interestArea
+    }  = req.body
 
     const project = await prisma.project.create({
         data:{
@@ -40,9 +41,7 @@ const createProjects = async (req:ExtendedRequest, res:Response) =>{
 }
 
 const getProjects = async (req:ExtendedRequest, res:Response) =>{
-    console.log(req.user?.userId)
     const project = await prisma.project.findMany()
-    console.log(project)
     res.status(200).json({project})
 }
 
@@ -51,7 +50,13 @@ const getProjectById = async(req:ExtendedRequest, res:Response) => {
     const project = await prisma.project.findUnique({
         where : { id :id},
     })
-    res.status(200).json(project)
+    
+    if(project != null){
+        res.status(200).json(project)
+    }
+    else{
+        res.status(204).json({"Mensagem": "Usuário não encontrado."})
+    } 
 }
 
 const putProjects = async (req: ExtendedRequest, res: Response) => {
@@ -62,16 +67,19 @@ const putProjects = async (req: ExtendedRequest, res: Response) => {
         timeline,
         studentCount,
         resources,
-        interestArea} = req.body
+        interestArea
+    } = req.body
+    
     const projects = await prisma.project.update({
-        where: {id : id},
+        where: {id :id},
         data: {title, 
             description,
             objectives,
             timeline,
             studentCount,
             resources,
-            interestArea}
+            interestArea
+        }
     })
     res.status(202).json(projects)
 }
