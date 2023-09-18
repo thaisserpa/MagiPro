@@ -27,7 +27,7 @@ model Application {
   id                       String         @id @default(uuid())
   summary                  String
   resumePath               String?
-  status                   String         @default("Pendente")
+  status                   ApplicationStatusType         @default(APPLICATION_WAITING)
   comment                  String?
   responseProfessorMessage String?
   projectId                String
@@ -37,6 +37,12 @@ model Application {
   Notification             Notification[]
 
   @@unique([userId, projectId])
+}
+
+enum ApplicationStatusType {
+  APPLICATION_WAITING
+  APPLICATION_ACCEPTED
+  APPLICATION_REFUSED
 }
 
 model Notification {
