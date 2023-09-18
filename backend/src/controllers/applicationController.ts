@@ -5,6 +5,12 @@ import { createToken, verifyToken } from "../helpers/jwt";
 import { error } from "console";
 import { ExtendedRequest } from "../middlewares/authJWT";
 
+const IsTeacher = (user?: { role: string }) => {
+    if (!user || user.role !== 'TEACHER') {
+        throw new ApiError("Somente professores podem criar projetos", 401);
+    }
+}
+
 const createApplication = async (req:ExtendedRequest, res:Response) =>{
     const {id,
             summary,
@@ -95,10 +101,27 @@ const deleteApplication = async (req:ExtendedRequest, res: Response) =>{
     res.status(204).json({"Mensagem":"Candidatura cancelada com sucesso."})
 }
 
+const setStatusApplication = async (req: ExtendedRequest, res: Response) =>{
+    IsTeacher(req.user)
+
+    const {id} = req.params
+    const{status
+        } = req.body
+
+    const application = await prisma.application.update({
+        where: {id :id},
+        data: {
+            status
+            }
+    })
+    res.status(202).json({"Mensagem":"Status de projeto alterado com sucesso!"})
+}
+
 export{
     createApplication,
     getApplication,
     getApplicationById,
     putApplication,
-    deleteApplication
+    deleteApplication,
+    setStatusApplication
 }
