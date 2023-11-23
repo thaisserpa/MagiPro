@@ -1,0 +1,147 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,600,400italic);
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: "Roboto";
+	font-weight: 100;
+	font-size: 13px;
+	line-height: 28px;
+	color: #606060;
+	background: #6D96F8;
+}
+
+.contenedor {
+	max-width: 550px;
+	width: 100%;
+	margin: 0 auto;
+	position: relative;
+}
+
+#formulario input[type="text"],
+#formulario select,
+#formulario textarea,
+#formulario button{
+	font: 400 12px/16px "Roboto", Helvetica, Arial, sans-serif;
+	width: 100%;
+	border: 1px solid #ccc;
+	margin: 0 0 5px;
+	padding: 10px;
+}
+
+
+#formulario {
+  background: #F9F9F9;
+  padding: 25px;
+  margin: 75px 0;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+
+#formulario [class="formgroup"]{
+    display:inline-block;
+    
+}
+
+#formulario h3 {
+	display: block;
+    font-size: 28px;
+    font-weight: 300;
+    margin-bottom: 10px;
+}
+
+#formulario h4 {
+	display: block;
+    margin: 4px 0 14px;
+    font-size: 12px;
+    font-weight: 400;
+}
+
+#formulario fieldset {
+	border: medium none !important;
+	margin: 0 0 10px;
+    min-width: 100%;
+    padding: 0;
+    width: 100%;
+}
+
+#formulario li [class="dropdown-list"] {
+    cursor: pointer;
+    padding:5px 10px;
+    font-size: 12px;
+
+
+}
+
+#formulario button[type="button"]{
+    background: #a5a1a1;
+    border:1px solid #ccc; 
+    padding: 5px;
+    min-width: 12%;
+    width: 10%;
+    font-size: 15px;
+    margin: 0 0 10px;
+    margin-left: 190px;
+
+}
+    
+
+
+#formulario select {
+	border-radius: 4px;
+	margin: 0 0 10px;
+	margin-left: 10px;
+    min-width: 30%;
+    padding: 5px;
+    width: 30%;
+	background: #F9F9F9;
+}
+
+#formulario button[type="submit"] {
+	cursor: pointer;
+	width: 100%;
+	border: none;
+	background: #6D96F8;
+	color: #FFF;
+	margin: 0 0 4px;
+	padding: 9px;
+	font-size: 15px;
+}
+
+#formulario button[type="reset"] {
+	cursor: pointer;
+	width: 100%;
+	border: none;
+	background: #db5252;
+    color: #FFF;
+	margin: 0 0 4px;
+	padding: 9px;
+	font-size: 15px;
+}
+
+#formulario li[class="dropdown-list"]{
+    padding: 5px 10px;
+    cursor: pointer;
+    
+}
+
+#formulario ul[id="pagination"]{
+    padding-left:40px !important;
+    cursor: pointer !important;
+}
+
+#formulario #multipleChoice {
+	line-height: 18px;
+}
+
+#formulario input:hover,
+#formulario select:hover,
+#formulario input:focus,
+#formulario textarea:focus {
+  outline: 0;
+  border: 1px solid #aaa;
+}
+	

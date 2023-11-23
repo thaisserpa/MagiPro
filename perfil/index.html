@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+        <title>Criação de Projeto</title>
+        <script src="index.js"></script>
+        <link rel="stylesheet" type="text/css" href="estilo.css">
+    </head>
+
+    <body>
+        <div class='contenedor'>
+            <form id='formulario' onSubmit='return checkForm (this)'>
+              <h3> Perfil do Usuário </h3>
+
+              <fieldset>
+                <label for="titulo">Nome:</label>
+                <input type="text" name="nome">
+              </fieldset>
+
+              <fieldset>
+                <label for="email">E-mail:</label>
+                <input type="text" name="email">
+              </fieldset>
+
+              <fieldset>
+                <label for="endereco"> Endereço:</label>
+                <input type="text" name="endereco">
+              </fieldset>
+
+              <div class="formgroup">
+                <label for="urs">Data de nascimento:</label>
+                <input type="date" id="due-date" class="form-control" placeholder="Due date">
+              </div>
+
+              <fieldset>
+                <label for="link">Linkedln: </label>
+                <input type="url" id="web" name="web">
+              </fieldset>
+
+              <fieldset>
+                <label for="requisitos">Telefone:</label>
+                <input type="number" name="telefone">
+              </fieldset>  
+
+              <fieldset>
+                Você é:
+                    <select name="area">
+                            <option name = "option"> Selecione </option>    
+                            <option name = "aluno">       Aluno     </option>
+                            <option name = "professor">    Professor   </option>
+                    </select>
+        
+             </fieldset>
+
+             <fieldset>
+                Gênero:
+                    <select name="genero">
+                            <option name = "option"> Selecione </option>    
+                            <option name = "homem">       Homem     </option>
+                            <option name = "mulher">    Mulher   </option>
+                    </select>
+        
+             </fieldset>
+
+              <fieldset>
+                <label for="foto">Adicione uma foto:  </label>
+                <input type="file" name="foto">
+              </fieldset>
+
+
+              <fieldset>
+                <button name="enviar" type="submit"> Adiconar </button>
+              </fieldset>
+              <fieldset>
+                <button name="reset"  type="reset"> Cancelar </button>
+              </fieldset>
+        
+            </form>
+          </div>
+                   
+    </body>       
+</html>
