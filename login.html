@@ -3,9 +3,8 @@
     <head>
         <title>Magipro</title>
         
-        <link rel="stylesheet" type="text/css" href="estilo.css">
-        <script src="./index.js"></script>
-
+        <link rel="stylesheet" type="text/css" href="css/login.css">
+        
     </head>
 
     <body>
@@ -16,17 +15,18 @@
                     <div class="social-container">
                     </div>
                     <span>Use seu e-mail para cadastro</span>
-                    <input type="text" placeholder="Name" />
-                    <input type="email" placeholder="Email" />
-                    <input type="password" placeholder="Password" />
+                    <input type="text" name="name" placeholder="Name" id="username" />
+                    <input type="email" name="email" placeholder="Email" id="register-email"/>
+                    <input type="password" name="password" placeholder="Password" id="register-pass"/>
+                    <input type="password" name="confirmPassword" placeholder="Confirmar password" id="confirm-register-pass"/>
                     
-                    <select name="tipo" id="tipo">
-                        <option value="selicionar">Selecione a área de interesse</option>
-                        <option value="aluno">Aluno</option>
-                        <option value="professor">Professor</option>
+                    <select name="role" id="tipo">
+                        <option selected value="student">Selecione a área de interesse</option>
+                        <option value="student">Aluno</option>
+                        <option value="teacher">Professor</option>
                     </select>
             
-                    <button>Inscrever-se</button>
+                    <button class="btn-signin" type="button">Inscrever-se</button>
                 </form>
             </div>
 
@@ -36,10 +36,11 @@
                     <div class="social-container">
                     </div>
                     <span>Sua conta</span>
-                    <input type="email" placeholder="Email" />
-                    <input type="password" placeholder="Password" />
+                    <input type="email" placeholder="Email" id="login-email"/>
+                    <input type="password" placeholder="Password" id="login-pass"/>
                     <a href="#">Esqueceu sua senha?</a>
-                    <button>Entrar</button>
+                    <button type="button" class="btn-login">Entrar</button>
+                    
                 </form>
             </div>
             <div class="overlay-container">
@@ -60,6 +61,7 @@
         
         <footer>
         </footer>
+        <script src="js/login.js"></script>
 
     </body>
 

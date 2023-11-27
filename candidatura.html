@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <head>
+    
+        <title>Candidatura de Projeto</title>
+        <link rel="stylesheet" href="css/style4.css">
+    </head>
+
+    <body>
+      <nav>
+        <div class="log">
+            <img src="assets/logo.png" width="150" height="40">
+        </div>
+
+        <div class="links">
+            <ul class="nav-itens">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="#" class="dashboard-link">Dashboard</a></li>
+                <li><a href="#"><i class="fa-regular fa-bell"></i></a></li>
+                <li><a href="#"><i class="fa-regular fa-envelope"></i></a></li>
+                <li><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                    <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+                    <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+                  </svg></a></li>
+            </ul>
+        </div>
+    </nav>
+        <div class='contenedor'>
+            <form id='formulario' onSubmit='return checkForm (this)'>
+              <h3 id="projectName"> Candidatura ao Projeto </h3>
+
+              <fieldset>
+                <label for="resumo">Resumo sobre sua experiência acadêmica:</label>
+                <textarea name="resumo"></textarea>
+              </fieldset>
+
+              <fieldset>
+                <label for="habilidade">Mensagem / Habilidades / Conhecimento</label>
+                <textarea name="habilidade"></textarea>
+              </fieldset>
+
+              <fieldset>
+                <label for="curriculo">Endereço do Curriculo:</label>
+                <textarea name="curriculo"></textarea>
+              </fieldset>
+              <fieldset>
+                <button name="enviar" type="submit"> Enviar </button>
+              </fieldset>
+              <fieldset>
+                <button name="reset"  type="reset"> Cancelar </button>
+              </fieldset>
+        
+            </form>
+          </div>
+                   
+    </body>       
+    <script src="js/candidatura.js"></script>
+</html>

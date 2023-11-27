@@ -3,11 +3,37 @@
 
     <head>
         <title>Criação de Projeto</title>
-        <script src="index.js"></script>
-        <link rel="stylesheet" type="text/css" href="estilo.css">
+        <script src="js/usuario.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/usuario.css">
     </head>
 
     <body>
+        <nav>
+            <div class="log">
+              <a href="index.html">
+                <img src="assets/logo.png" width="150" height="40">
+              </a>
+            </div>
+
+
+
+            <div class="links">
+                <ul class="nav-itens">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="#" class="dashboard-link">Dashboard</a></li>
+
+                    <li><a href="login.html">Entrar</a></li>
+                    <li><a href="index.html">Projetos</a></li>
+                    <li><a href="dashboard.html"><i class="fa-regular fa-bell"></i></a></li>
+                    <li><a href="dashboard.html"><i class="fa-regular fa-envelope"></i></a></li>
+                    <li><a href="usuario.html"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+                        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+                      </svg></a></li>
+                </ul>
+            </div>
+        </nav>
+
         <div class='contenedor'>
             <form id='formulario' onSubmit='return checkForm (this)'>
               <h3> Perfil do Usuário </h3>

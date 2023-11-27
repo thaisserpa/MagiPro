@@ -1,18 +1,33 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,300,600,400italic);
 
+
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+    margin: 0;
+    padding:0;
+    outline: none;
+    border: none;
+    box-sizing: border-box;
+    align-items: center;
+}
+nav{
+    display: flex;
+    justify-content: space-around;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-top: 35px;
+    align-items: center;
+    margin-bottom: 35px;
+
 }
 
-body {
-	font-family: "Roboto";
-	font-weight: 100;
-	font-size: 13px;
-	line-height: 28px;
-	color: #606060;
-	background: #6D96F8;
+.nav-itens{
+    list-style: none;
+    display:flex;
+}
+
+.nav-itens>li>a{
+    padding-left: 20px;
+    color: #202020;
+    text-decoration: none;
 }
 
 .contenedor {
@@ -87,8 +102,6 @@ body {
     margin-left: 190px;
 
 }
-    
-
 
 #formulario select {
 	border-radius: 4px;

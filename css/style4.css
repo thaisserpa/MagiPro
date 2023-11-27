@@ -12,8 +12,30 @@ body {
 	font-size: 13px;
 	line-height: 28px;
 	color: #606060;
-	background: #6D96F8;
+
 }
+
+nav{
+    display: flex;
+    justify-content: space-around;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-top: 35px;
+    align-items: center;
+    margin-bottom: 35px;
+
+}
+
+.nav-itens{
+    list-style: none;
+    display:flex;
+}
+
+.nav-itens>li>a{
+    padding-left: 20px;
+    color: #202020;
+    text-decoration: none;
+}
+
 
 .contenedor {
 	max-width: 550px;

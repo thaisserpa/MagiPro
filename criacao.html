@@ -3,11 +3,33 @@
 
     <head>
         <title>Criação de Projeto</title>
-        <script src="index.js"></script>
-        <link rel="stylesheet" type="text/css" href="estilo.css">
+        <script src="js/criacao.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/criacao.css">
     </head>
 
     <body>
+
+        <nav>
+            <div class="log">
+                <img src="assets/logo.png" width="150" height="40">
+            </div>
+
+
+            <div class="links">
+                <ul class="nav-itens">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="#" class="dashboard-link">Dashboard</a></li>
+
+                    <li><a href="index.html">Projetos</a></li>
+                    <li><a href="#"><i class="fa-regular fa-bell"></i></a></li>
+                    <li><a href="#"><i class="fa-regular fa-envelope"></i></a></li>
+                    <li><a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
+                        <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
+                        <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
+                    </svg></a></li>
+                </ul>
+            </div>
+        </nav>
         <div class='contenedor'>
             <form id='formulario' onSubmit='return checkForm (this)'>
               <h3> Novo Projeto </h3>
@@ -18,6 +40,12 @@
               </fieldset>
 
               <fieldset>
+                <label for="descricao">Descrição</label>
+                <input type="text" name="descricao">
+              </fieldset>
+
+
+              <fieldset>
                 <label for="objetivos">Objetivos do Projeto</label>
                 <textarea name="objetivos"></textarea>
               </fieldset>
@@ -25,11 +53,6 @@
               <fieldset>
                 <label for="requisitos">Requisitos Obrigatorios</label>
                 <textarea name="requisitos"></textarea>
-              </fieldset>
-
-              <fieldset>
-                <label for="foto">Adicione a imagem:  </label>
-                <input type="file" name="foto">
               </fieldset>
 
               <fieldset>
@@ -49,22 +72,6 @@
               </fieldset>
   
               
-
-        
-              <div class="formgroup">
-                <label for="act">Cronograma de Atividades:</label>
-                <input type="text" id="act" class="form-control" placeholder="Adicione a atividade">
-              </div>
-              <div class="formgroup">
-                <label for="urs"></label>
-                <input type="date" id="due-date" class="form-control" placeholder="Due date">
-              </div>
-
-              <div class="gravar">
-                <div class="col-xs-3 pull-left">
-                    <button type="button" class="gravar" onclick="newElement()">Gravar</button>
-              </div>
-              
               <ul class="dropdown-menu">
                     <li class="dropdown-list" onclick="sortElementsById()">By ID</li>
                     <li class="dropdown-list" onclick="sortElementsByName()">By Name</li>
@@ -76,7 +83,7 @@
               <ul id="pagination" class="pagination pagination-lg"></ul>
                            
               <fieldset>
-                <button name="enviar" type="submit"> Criar Projeto </button>
+                <button id="enviarBtn" type="submit">Criar Projeto</button>
               </fieldset>
               <fieldset>
                 <button name="reset"  type="reset"> Cancelar </button>
@@ -84,6 +91,5 @@
         
             </form>
           </div>
-                   
-    </body>       
-</html>
+    </body>
+</html>        
