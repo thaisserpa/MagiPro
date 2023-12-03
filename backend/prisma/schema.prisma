@@ -1,0 +1,73 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Project {
+  id           String        @id @default(uuid())
+  title        String
+  description  String
+  objectives   String[]
+  timeline     Json
+  studentCount Int
+  resources    String[]
+  interestArea String[]
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+  userId       String? 
+  user         user?         @relation(fields: [userId], references: [id])
+  applications Application[]
+  acceptedApplicants    String[]
+}
+
+model Application {
+  id                       String         @id @default(uuid())
+  summary                  String
+  resumePath               String?
+  status                   String         @default("Pendente")
+  comment                  String?
+  responseProfessorMessage String?
+  projectId                String
+  Project                  Project        @relation(fields: [projectId], references: [id])
+  userId                   String 
+  user                     user           @relation(fields: [userId], references: [id])
+  Notification             Notification[]
+
+  @@unique([userId, projectId])
+}
+
+model Notification {
+  id            String           @id @default(uuid()) 
+  createdAt     DateTime         @default(now())
+  updatedAt     DateTime         @updatedAt
+  message       String
+  read          Boolean          @default(false)
+  applicationId String?
+  Application   Application?     @relation(fields: [applicationId], references: [id])
+  user          user?            @relation(fields: [userId], references: [id])
+  userId        String?
+  projectId     String?          
+}
+
+model user {
+  id            String         @id @default(uuid())
+  name          String
+  email         String         @unique
+  password      String
+  role          UserRole
+  description   String?
+  resume        String?
+  notifications Notification[]
+  applications  Application[] 
+  projects      Project[]
+  myProjects    String[]
+}
+
+enum UserRole {
+  STUDENT
+  TEACHER
+}
